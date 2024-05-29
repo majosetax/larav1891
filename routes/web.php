@@ -5,6 +5,7 @@ use App\Http\Controllers\FriendController;
 use App\Http\Controllers\PhraseController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\ResultController;
+use App\Http\Controllers\CursoController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -23,9 +24,7 @@ Route::get('/', function () {
 });
 
 
-//Route::get('/frmproduct',[ProductController::class,'formularioProducto']);
 
-//Route::post('/productstore',[ProductController::class,'productoStore'])->name('product.store');
 
 //Route::get('/frmproviders',[ProductController::class,'formularioProviders']);
 
@@ -51,3 +50,19 @@ Route::post('/storefriend',[FriendController::class,'store'])->name('friend.stor
 Route::get('/frmphrase',[PhraseController::class,'create']);   
 
 Route::post('/storephrase',[PhraseController::class,'store'])->name('phrase.store');
+
+//curso
+
+Route::get('/curso/listar',[CursoController::class,'index'])->name('curso.index');;
+
+Route::get('/curso/create',[CursoController::class,'create']);
+
+Route::post('/curso/store',[CursoController::class,'store'])->name('store.curso');
+
+//product
+
+Route::get('/producto/listar',[ProductController::class,'index'])->name('product.index');
+
+Route::get('/producto/create',[ProductController::class,'create']);
+
+Route::post('/producto/store',[ProductController::class,'store'])->name('store.product');
