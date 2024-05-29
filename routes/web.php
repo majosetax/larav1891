@@ -59,6 +59,9 @@ Route::get('/curso/create',[CursoController::class,'create']);
 
 Route::post('/curso/store',[CursoController::class,'store'])->name('store.curso');
 
+Route::get('/curso/{curso}',[CursoController::class,'show'])->name('curso.show');
+
+Route::delete('curso/{curso}',[CursoController::class,'destroy'])->name('curso.destroy');
 //product
 
 Route::get('/producto/listar',[ProductController::class,'index'])->name('product.index');

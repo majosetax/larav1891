@@ -2,18 +2,17 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Curso;
+use App\Models\Role;
 use Illuminate\Http\Request;
 
-class CursoController extends Controller
+class RoleController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        $cursos = Curso::orderBy('id','asc')->get();
-        return view('curso.listar',compact('cursos'));
+        //
     }
 
     /**
@@ -21,7 +20,7 @@ class CursoController extends Controller
      */
     public function create()
     {
-        return view('curso.create');
+        //
     }
 
     /**
@@ -29,29 +28,21 @@ class CursoController extends Controller
      */
     public function store(Request $request)
     {
-        $name=$request->input('name');
-        $description=$request->input('description');
-
-        Curso::create([
-            'name'=>$name,
-            'description'=>$description
-        ]);
-
-        echo 'Guardado';
+        //
     }
 
     /**
      * Display the specified resource.
      */
-    public function show(Curso $curso)
+    public function show(Role $role)
     {
-        return view('curso.show',compact('curso'));
+        //
     }
 
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Curso $curso)
+    public function edit(Role $role)
     {
         //
     }
@@ -59,7 +50,7 @@ class CursoController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Curso $curso)
+    public function update(Request $request, Role $role)
     {
         //
     }
@@ -67,9 +58,8 @@ class CursoController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Curso $curso)
+    public function destroy(Role $role)
     {
-        $curso->delete();
-        return redirect()->route('curso.index');
+        //
     }
 }

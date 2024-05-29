@@ -16,9 +16,36 @@
       <br>
 
       <div class="container-fluid">
-      {{$cursos}}
-      </div>
+        <table class="table table-dark table-striped">
       
+           <tr>
+            <td>id</td>
+            <td>nombre</td>
+            <td>descripcion</td>
+            <td>Ver mas...</td>
+            <td>Eliminar registro</td>
+           </tr>
+
+           <tr>
+            @foreach ($cursos as $curso)
+            <td>{{$curso->id}}</td>
+            <td>{{$curso->name}}</td>
+            <td>{{$curso->description}}</td>
+            <td><a href="{{route('curso.show',$curso->id)}}">Mostrar</a></td>
+           <td>
+            <form action="{{route('curso.destroy',$curso->id)}}" method="POST">
+            @csrf
+            @method('delete')
+            <button type="submit">Eliminar</button>
+            </form>
+
+           </td>
+          
+          </tr>
+            <br><br>
+        @endforeach
+        </table>
+      </div>
 
       
 </body>
